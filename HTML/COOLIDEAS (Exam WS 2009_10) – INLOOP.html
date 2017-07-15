@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>COOLIDEAS (Exam WS 2009/10) – INLOOP</title>
+  <style class="anchorjs"></style><link rel="stylesheet" type="text/css" href="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/bootstrap-theme.css">
+  <link rel="stylesheet" type="text/css" href="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/inloop.css">
+  
+  <link rel="stylesheet" type="text/css" href="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/syntax.css">
+
+</head>
+<body class="autolink">
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://inloop.inf.tu-dresden.de/">INLOOP</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+  <li><a href="https://inloop.inf.tu-dresden.de/">Home</a></li>
+  <li><a href="https://inloop.inf.tu-dresden.de/account/profile/">My Profile</a></li>
+  
+  <li><a id="logout-link" href="https://inloop.inf.tu-dresden.de/logout/">Logout</a></li>
+
+
+      </ul>
+    </div>
+    
+
+<form id="logout-form" method="post" action="/logout/">
+  <input name="csrfmiddlewaretoken" value="idjhiqdsvEXfjvz29pWa8BvIruc0coUTXOaobP2RXGSb6KMTORlez1eEjyW134pW" type="hidden">
+</form>
+<script src="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/logout.js"></script>
+
+
+  </div>
+</nav>
+
+<div class="container">
+
+
+
+
+
+<ol class="breadcrumb">
+  <li><a href="https://inloop.inf.tu-dresden.de/tasks/">Tasks</a></li>
+  <li><a href="https://inloop.inf.tu-dresden.de/tasks/category/exam/">Exam</a></li>
+  <li class="active">COOLIDEAS (Exam WS 2009/10)</li>
+</ol>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active">
+    <a href="https://inloop.inf.tu-dresden.de/tasks/coolideas/">Description</a>
+  </li>
+  <li role="presentation">
+    <a href="https://inloop.inf.tu-dresden.de/solutions/coolideas/upload">Manual upload</a>
+  </li>
+  <li role="presentation">
+    <a href="https://inloop.inf.tu-dresden.de/solutions/coolideas/">Your solutions</a>
+  </li>
+</ul>
+
+<div class="static-tab-content">
+
+<h1>COOLIDEAS (Exam WS 2009/10)</h1>
+<p>There is an online platform for innovation management to be developed
+ at the university. They decided to use the ‘Open Innovation’ concept. 
+The main idea is that organizations in a world of widely distributed 
+knowledge cannot rely on their own innovation force alone. Instead, the 
+integration and use of external information and competences become more 
+and more important.</p>
+<p>COOLIDEAS should support the organization of a community of 
+‘innovators’: Ideas of students, employees, professors and external 
+partners as well are exchanged, discussed and evaluated. In the future, 
+it should be possible to realize a comprehensive idea management 
+processes.</p>
+<p>To distinguish between the implementation and analysis classes, all implementation class names begin with ‘<strong>J</strong>‘ (like implementation with <strong>J</strong>ava).</p>
+<h2 id="class-diagram">Class Diagram<a style="font: 1em/1 anchorjs-icons; padding-left: 0.375em;" data-anchorjs-icon="" aria-label="Anchor link for: class diagram" href="#class-diagram" class="anchorjs-link "></a></h2>
+<p>The class diagram below shows the classes needed for the idea 
+management. See below for further explanations of the different aspects 
+of this large structure.</p>
+<p><img alt="Class diagram" src="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/CoolIdeas_ClassDiagram.png"></p>
+<h2 id="idea-pool">Idea Pool<a style="font: 1em/1 anchorjs-icons; padding-left: 0.375em;" data-anchorjs-icon="" aria-label="Anchor link for: idea pool" href="#idea-pool" class="anchorjs-link "></a></h2>
+<p>The class <code>JIdeaPool</code> should manage all topics and the ideas belongig to them.</p>
+<ul>
+<li>The attribute <code>pool</code> must be implemented as a <code>java.util.Map</code>, which maps each <code>JTopic</code> to the <code>java.util.Set</code> of <code>JIdea</code>s belonging to that <code>JTopic</code>. Note that a <code>JIdea</code> may belong to several <code>JTopic</code>s.</li>
+<li>The <code>add()</code> methods add either a topic or an idea and its topic to the pool of ideas. A <code>JIdeaPool</code> may not contain several ideas with the same title.</li>
+<li>The <code>remove()</code> methods remove an idea or a topic from the <code>pool</code>. If the idea or the topic does not exist, <code>remove()</code> returns <code>false</code>, otherwise <code>true</code>. Make sure to remove an idea from every topic, if it is associated to multiple topics!</li>
+<li>The <code>numberOfTopics()</code> method returns the number of different topics existing in the pool of ideas. The method <code>numberOfIdeas()</code>  works analogous.</li>
+<li>The <code>getIdea()</code> method returns the idea with the given title. If there is no idea with the given title, <code>null</code> must be returned.</li>
+</ul>
+<p>The output of the <code>toString()</code> method should look like this:</p>
+<pre class="codehilite"><code>Content: Title
+Description</code></pre>
+
+
+<p>Of course, <code>Content</code> must be replaced by the appropriate tag: <code>Attachment</code>, <code>Idea</code>, <code>Topic</code> or <code>Valuation</code>.</p>
+<h2 id="idea-exchange-process">Idea Exchange Process<a style="font: 1em/1 anchorjs-icons; padding-left: 0.375em;" data-anchorjs-icon="" aria-label="Anchor link for: idea exchange process" href="#idea-exchange-process" class="anchorjs-link "></a></h2>
+<p>Now, we take a closer look at the usage of the state pattern in the 
+class structure. In this pattern, we use an abstract state class (<code>JIdea.JState</code>
+ in this case) which provides the design of all concrete states. 
+Whenever an undefined transition between states is triggered, an <code>IllegalxStateException</code> must be thrown. If you implement this behavior in the <code>JIdea.JState</code>
+ class you do not need to override the methods in each concrete state 
+class. To understand which transition is allowed in which state, take a 
+look at the following state diagram.</p>
+<p><img alt="State diagram" src="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/CoolIdeas_StateDiagram.png"></p>
+<ul>
+<li>Once declined or released, an <code>JIdea</code>‘s state cannot be changed anymore. All declined or released ideas can be removed from the <code>pool</code> with the methods <code>JIdeaPool.removeReleased()</code> and <code>JIdeaPool.removeDeclined()</code>.</li>
+<li>The <code>evaluate()</code> method should change the <code>valuation</code> attribute.</li>
+<li>The <code>discuss()</code> method appends the given discussion <code>String</code> to the previous discussions (separated by a newline character).</li>
+</ul>
+<p><strong>Remember to implement the state pattern the way it was 
+introduced in the lecture: All states must be inner classes of the 
+context class.</strong></p>
+<h2 id="getting-updated-on-topics">Getting Updated on Topics<a style="font: 1em/1 anchorjs-icons; padding-left: 0.375em;" data-anchorjs-icon="" aria-label="Anchor link for: getting updated on topics" href="#getting-updated-on-topics" class="anchorjs-link "></a></h2>
+<p>Every member of the community (<code>JMember</code>) should be able to subscribe to <code>JTopic</code>s to be notified whenever they are changed. Therefore, we extend our design like this:</p>
+<p><img alt="Observer pattern" src="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/CoolIdeas_ObserverPattern.png"></p>
+<ul>
+<li><code>topics</code> should be a <code>java.util.Set</code></li>
+<li>Whenever the title or description of a <code>JTopic</code> is changed, the methods <code>setChanged()</code> and <code>notifyObservers(Object arg)</code> (both inherited from <code>Observable</code>) should be called. The value specified with the <code>arg</code> parameter is passed to each <code>Observer</code> observing the <code>JTopic</code> as the <code>arg1</code> argument of their method <code>update(Observable arg0, Object arg1)</code>.</li>
+<li><code>JMember.update(...)</code> should print the following message to the console: <code>"The topic &lt;id&gt; has been updated!"</code>, where <code>&lt;id&gt;</code> is replaced with the concerning topic’s <code>id</code>. Make sure to use <code>System.out.println()</code> or the tests will fail!</li>
+</ul>
+<h2 id="task">Task<a style="font: 1em/1 anchorjs-icons; padding-left: 0.375em;" data-anchorjs-icon="" aria-label="Anchor link for: task" href="#task" class="anchorjs-link "></a></h2>
+<p>Implement the idea management classes, the state pattern’s behavior and the observer functionality!</p>
+<h2 id="hints">Hints<a style="font: 1em/1 anchorjs-icons; padding-left: 0.375em;" data-anchorjs-icon="" aria-label="Anchor link for: hints" href="#hints" class="anchorjs-link "></a></h2>
+<ul>
+<li>The most important erroneous parameter values must be handled properly. Therefore, the parameter value <code>null</code> should result in a <code>NullPointerException</code> while others like empty <code>String</code>s should cause an <code>IllegalArgumentException</code>.</li>
+</ul>
+<h2 id="resources">Resources<a style="font: 1em/1 anchorjs-icons; padding-left: 0.375em;" data-anchorjs-icon="" aria-label="Anchor link for: resources" href="#resources" class="anchorjs-link "></a></h2>
+<ul>
+<li><a href="https://inloop.inf.tu-dresden.de/tasks/coolideas/attachments/CoolIdeas_tests.zip">JUnit tests</a></li>
+<li><a href="https://inloop.inf.tu-dresden.de/tasks/coolideas/attachments/st_exam_ws0910.pdf">Related exam task</a></li>
+</ul>
+
+</div>
+
+
+</div>
+
+<footer class="footer">
+  <div class="container clearfix">
+    <ul class="list-inline footer-left">
+      <li class="text-muted">
+        © 2017 <a href="https://github.com/st-tu-dresden/inloop">@st-tu-dresden</a>
+      </li>
+    </ul>
+    <ul class="list-inline footer-right">
+
+      <li><a href="https://inloop.inf.tu-dresden.de/about/imprint/">Imprint</a></li>
+
+    </ul>
+  </div>
+</footer>
+
+<script src="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/jquery.js"></script>
+<script src="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/bootstrap.js"></script>
+
+<script src="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/prism.js"></script>
+<script src="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/prism-java.js"></script>
+<script src="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/anchor.js"></script>
+<script src="COOLIDEAS%20%28Exam%20WS%202009_10%29%20%E2%80%93%20INLOOP_files/inloop.js"></script>
+
+
+
+
+</body></html>
