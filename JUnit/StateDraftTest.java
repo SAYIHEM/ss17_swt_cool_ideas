@@ -4,7 +4,6 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 public class StateDraftTest extends JStateBaseTest {
-
     @Test
     public void testHold() {
         i.hold();

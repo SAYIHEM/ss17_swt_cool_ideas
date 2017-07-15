@@ -1,6 +1,4 @@
-import java.util.List;
-
-public class JTopic extends JContent implements Comparable {
+public class JTopic extends JContent implements Comparable<Object> {
 
     private int id;
 

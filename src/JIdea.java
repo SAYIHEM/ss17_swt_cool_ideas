@@ -1,8 +1,7 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class JIdea extends JContent implements Comparable {
+public class JIdea extends JContent implements Comparable<Object> {
 
     private List<JAttachment> attachments;
     private JState state;
@@ -86,7 +85,7 @@ public class JIdea extends JContent implements Comparable {
     @Override
     public String toString() {
 
-        return this.getTitle() + "\n" + this.getDescription();
+        return "Idea: " + getTitle() + "\n" + getDescription();
     }
 
     @Override

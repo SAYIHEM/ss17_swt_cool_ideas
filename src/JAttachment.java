@@ -1,8 +1,6 @@
-import sun.java2d.jules.JulesAATileGenerator;
-
 import java.io.File;
 
-public class JAttachment extends  JContent {
+public class JAttachment extends JContent {
 
     private File file;
 
@@ -46,7 +44,6 @@ public class JAttachment extends  JContent {
             return false;
         }
 
-        // TODO: Vergleich aktuell über Titel!
         return this.getTitle().equals(attachment.getTitle());
     }
 }

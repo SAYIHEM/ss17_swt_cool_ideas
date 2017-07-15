@@ -78,12 +78,11 @@ public class JIdeaPoolTest {
         ideaPool.add(ideaWithExistingTitle, t1);
         assertFalse(
                 "JIdeaPool.add(JIdea, JTopic) should not add an idea if the pool already contains another idea with the same title!",
-                actPool.get(t1).contains(ideaWithExistingTitle)); // TODO: Aussage immer True , da Ideas nach Titel verglichen werden...
+                actPool.get(t1).contains(ideaWithExistingTitle));
 
         ideaPool.add(ideaWithExistingTitle, t2);
-        boolean contains = actPool.containsKey(t2);
         assertFalse("JIdeaPool.add(JIdea, JTopic) should not add the topic to the pool if the idea is not added!",
-                contains);
+                actPool.containsKey(t2));
 
         ideaPool.add(i3, t1);
         assertTrue("JIdeaPool.add(JIdea, JTopic) should add the idea to the set of ideas of the given topic!", actPool
